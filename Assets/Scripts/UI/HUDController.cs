@@ -25,7 +25,7 @@ public class HUDController : MonoBehaviour
             return;
         }
 
-        if(CantidadIconosVidas() > vidas)
+        if (CantidadIconosVidas() > vidas)
         {
             EliminarUltimoIcono();
         }
@@ -39,7 +39,7 @@ public class HUDController : MonoBehaviour
     {
         return contenedorIconosVida.transform.childCount == 0;
     }
-        
+
     private int CantidadIconosVidas()
     {
         return contenedorIconosVida.transform.childCount;
