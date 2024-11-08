@@ -18,10 +18,11 @@ public class HUDController : MonoBehaviour
 
     public void ActualizarVidasHUD(int vidas)
     {
-        Debug.Log("ESTAS ACTUALIZANDO VIDAS");
+        Debug.Log("Llamada a ActualizarVidasHUD con " + vidas + " vidas.");
         if (EstaVacioContenedor())
         {
             CargarContenedor(vidas);
+            Debug.Log("Cantidad de iconos tras cargar: " + CantidadIconosVidas());
             return;
         }
 
@@ -33,6 +34,7 @@ public class HUDController : MonoBehaviour
         {
             CrearIcono();
         }
+        Debug.Log("Cantidad de iconos tras actualización: " + CantidadIconosVidas());
     }
 
     private bool EstaVacioContenedor()
@@ -61,6 +63,8 @@ public class HUDController : MonoBehaviour
 
     private void CrearIcono()
     {
-        Instantiate(iconoVida, contenedorIconosVida.transform);
+        Debug.Log("Instanciando un nuevo icono de vida");
+        Instantiate(iconoVida, contenedorIconosVida.transform);    
     }
 }
+
